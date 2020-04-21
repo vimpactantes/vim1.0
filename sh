@@ -39,7 +39,7 @@ if [[ ! $INPUT =~ ".tk" ]]; then
     if [ $INPUT = "s" -o $INPUT = "si" -o $INPUT = "sí" -o $INPUT = "S" -o $INPUT = "SI" -o $INPUT = "SÍ" ]
     then
         wget -qO sh https://raw.githubusercontent.com/vimpactantes/vim1.0/master/sh
-        sh sh
+        sh vim
     else
         printf "\033c"
         echo "*************************************************************************************************"
