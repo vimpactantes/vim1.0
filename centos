@@ -1,0 +1,68 @@
+#! /bin/sh
+rm -f first
+printf "\033c"
+if [ ! -f .ingress/centos ]
+then
+    echo "*************************************************************************************************"
+    echo "***********                                                                           ***********"
+    echo "***********                         CONSTRUCTOR WEB 'VIM-v1.0'                        ***********"
+    echo "***********                                                                           ***********"
+    echo "***********                    https://ventasimpactantes.com/script                   ***********"
+    echo "***********                                                                           ***********"
+    echo "================================================================================================="
+    echo "===========                                                                           ==========="
+    echo "===========      T E R M I N O S   Y   C O N D I C I O E S   D E   C E N T O S 7      ==========="
+    echo "===========                                                                           ==========="
+    echo "================================================================================================="
+    echo ""
+    echo "           Entra al enlace con tu cuenta de AWS y haz clic en: 'Accept Terms'                    "
+    echo ""
+    echo "           Luego regresa aquí para continuar. si no ves el botón es porque ya aceptaste.         "
+    echo ""
+    echo "           Acepta Términos Aquí: https://ventasimpactantes.com/aceptar-terminos-centos7          "
+    echo ""
+    echo ""
+    echo -n "   *¡SI NO HAS ACEPTADO LOS TÉRMINOS Y CONDICIONES, ESTE SCRIPT NO FUNCIONARÁ!* "
+    echo ""
+    echo ""
+    echo -n " -  ¿Ya aceptaste los términos para 'Centos7' en la página anterior?  [ si / no ]: "
+    read INPUT
+    if [ $INPUT = "s" -o $INPUT = "si" -o $INPUT = "sí" -o $INPUT = "S" -o $INPUT = "SI" -o $INPUT = "SÍ" ]
+    then
+        mkdir .ingress/
+        touch .ingress/centos
+        wget -qO variables https://raw.githubusercontent.com/vimpactantes/vim1.0/master/var
+        sh variables
+    else
+        printf "\033c"
+        echo "*************************************************************************************************"
+        echo "***********                                                                           ***********"
+        echo "***********                         CONSTRUCTOR WEB 'VIM-v1.0'                        ***********"
+        echo "***********                                                                           ***********"
+        echo "***********                    https://ventasimpactantes.com/script                   ***********"
+        echo "***********                                                                           ***********"
+        echo "================================================================================================="
+        echo "===========                                                                           ==========="
+        echo "===========                  ! V U E L V E  A  I N T E N T A R L O !                  ==========="
+        echo "===========                                                                           ==========="
+        echo "================================================================================================="
+        echo ""
+        echo "    Para poder continuar, asegúrate de ir a la página de términos y hacer clic en el botón de:     "
+        echo ""
+        echo "                                        ' Accept Terms '                                         "
+        echo ""
+        echo "    Luego vuelve aquí y ejecuta de nuevo el script escribiendo 'sh sh [enter]'"
+        echo ""
+        echo ""
+        echo "    Acepta Términos Aquí: https://ventasimpactantes.com/aceptar-terminos-centos7                 "
+        echo ""
+        echo ""
+        echo "================================================================================================="
+        echo ""
+        echo ""
+        exit
+    fi
+else
+    wget -qO variables https://raw.githubusercontent.com/vimpactantes/vim1.0/master/var
+    sh variables
+fi
