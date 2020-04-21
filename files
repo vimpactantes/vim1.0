@@ -178,7 +178,6 @@ DOMINIO="$MYDOMAIN"
 sed -i '5i return 444;' /usr/local/nginx/conf/conf.d/virtual.conf
 rm -rf /usr/local/nginx/conf/conf.d/demodomain.com.conf
 rm -rf /home/nginx/domains/demodomain.com
-sh /root/aws-config.sh
 sh /root/"\$DOMINIO"/ssllabs.sh
 sh /root/"\$DOMINIO"/bk-local.sh
 sh /root/"\$DOMINIO"/wordpress.sh
