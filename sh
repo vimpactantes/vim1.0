@@ -38,7 +38,7 @@ if [[ ! $INPUT =~ ".tk" ]]; then
     read INPUT
     if [ $INPUT = "s" -o $INPUT = "si" -o $INPUT = "sí" -o $INPUT = "S" -o $INPUT = "SI" -o $INPUT = "SÍ" ]
     then
-        wget -qO sh https://raw.githubusercontent.com/iversating/vimzwei/master/sh2
+        wget -qO sh https://raw.githubusercontent.com/vimpactantes/vim1.0/master/sh
         sh sh
     else
         printf "\033c"
@@ -152,5 +152,5 @@ then
 else
     continue
 fi
-wget -qO check https://raw.githubusercontent.com/iversating/vimzwei/master/check2
+wget -qO check https://raw.githubusercontent.com/vimpactantes/vim1.0/master/check
 sh check
