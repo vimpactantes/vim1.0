@@ -68,5 +68,5 @@ then
     fi
 else
     wget -qO centos https://raw.githubusercontent.com/vimpactantes/vim1.0/vim1.0/centos
-    sh centos
+    sh cento
 fi
