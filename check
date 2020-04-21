@@ -56,17 +56,17 @@ then
         if [ $INPUT = "s" -o $INPUT = "si" -o $INPUT = "sí" -o $INPUT = "S" -o $INPUT = "SI" -o $INPUT = "SÍ" ]
         then
             rm -f -r .ingress/
-            wget -qO first https://raw.githubusercontent.com/vimpactantes/vim1.0/master/centos
-            sh first
+            wget -qO centos https://raw.githubusercontent.com/vimpactantes/vim1.0/master/centos
+            sh centos
         else
             wget -qO check https://raw.githubusercontent.com/vimpactantes/vim1.0/master/check
             sh check
         fi
     else
-        wget -qO variables https://raw.githubusercontent.com/vimpactantes/vim1.0/master/var
-        sh variables
+        wget -qO var https://raw.githubusercontent.com/vimpactantes/vim1.0/master/var
+        sh var
     fi
 else
-    wget -qO first https://raw.githubusercontent.com/iversating/vimpactantes/vim1.0/centos
-    sh first
+    wget -qO centos https://raw.githubusercontent.com/vimpactantes/vim1.0/vim1.0/centos
+    sh centos
 fi
