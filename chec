@@ -1,0 +1,72 @@
+#! /bin/sh
+rm -f check
+if [ -f .ingress/tf.tfvars ]
+then
+    EML="$(cat .ingress/tf.tfvars | grep 'email' | sed -e 's/cloudflare_email = //g; s/\"//g')"
+    export EML
+    ACK="$(cat .ingress/tf.tfvars | grep 'access' | sed -e 's/aws_access_key = //g; s/\"//g')"
+    SCK="$(cat .ingress/tf.tfvars | grep 'secret' | sed -e 's/aws_secret_key = //g; s/\"//g')"
+    CFA="$(cat .ingress/tf.tfvars | grep 'api' | sed -e 's/cloudflare_api_key = //g; s/\"//g')"
+    printf "\033c"
+    echo "*************************************************************************************************"
+    echo "***********                                                                           ***********"
+    echo "***********                         CONSTRUCTOR WEB 'VIM-v1.0'                        ***********"
+    echo "***********                                                                           ***********"
+    echo "***********                   https://ventasimpactantes.com/script                    ***********"
+    echo "***********                                                                           ***********"
+    echo "================================================================================================="
+    echo "===========                                                                           ==========="
+    echo "===========                           ! A T E N C I Ó N !                             ==========="
+    echo "===========                                                                           ==========="
+    echo "================================================================================================="
+    echo ""
+    echo "           Ya se han encontrado las siguientes credenciales de acceso para este perfil       "
+    echo ""
+    echo "           'CORREO ELECTRÓNICO' de Cloudflare       =  $EML                                  "
+    echo "           'API KEY' de Cloudflare                  =  $CFA                                  "
+    echo "           'ID DE CLAVE DE ACCESO' de Amazon AWS    =  $ACK "
+    echo "           'CLAVE DE ACCESO SECRETA' de Amazon AWS  =  $SCK                                  "
+    echo ""
+    echo -n "    ¿Que deseas hacer con estas Credenciales?              "
+    echo ""
+    echo ""
+    echo -n " -  Escribe 'crear' para desplegar un nuevo servidor en $MYDOMAIN...                      "
+    echo ""
+    echo -n " -  Escribe 'cambiar' para crear unas credenciales nuevas...                   "
+    echo ""
+    echo -n " -  o presiona en tu teclado 'Control + C' para salir  [ crear / cambiar ]: "
+    read INPUT
+    if [ $INPUT = "cambiar" -o $INPUT = "Cambiar" -o $INPUT = "CAMBIAR" ]
+    then
+        printf "\033c"
+        echo "*************************************************************************************************"
+        echo "***********                                                                           ***********"
+        echo "***********                         CONSTRUCTOR WEB 'VIM-v1.0'                        ***********"
+        echo "***********                                                                           ***********"
+        echo "***********                   https://ventasimpactantes.com/script                    ***********"
+        echo "***********                                                                           ***********"
+        echo "================================================================================================="
+        echo "===========                                                                           ==========="
+        echo "===========                           ! A T E N C I Ó N !                             ==========="
+        echo "===========                                                                           ==========="
+        echo "================================================================================================="
+        echo ""
+        echo -n " -  ¿Seguro que quieres borrar estas credenciales y crear unas nuevas?  [ si / no ]: "
+        read INPUT
+        if [ $INPUT = "s" -o $INPUT = "si" -o $INPUT = "sí" -o $INPUT = "S" -o $INPUT = "SI" -o $INPUT = "SÍ" ]
+        then
+            rm -f -r .ingress/
+            wget -qO centos https://raw.githubusercontent.com/vimpactantes/vim1.0/master/centos
+            sh centos
+        else
+            wget -qO check https://raw.githubusercontent.com/vimpactantes/vim1.0/master/check
+            sh check
+        fi
+    else
+        wget -qO var https://raw.githubusercontent.com/vimpactantes/vim1.0/master/var
+        sh var
+    fi
+else
+    wget -qO centos https://raw.githubusercontent.com/vimpactantes/vim1.0/vim1.0/centos
+    sh centos
+fi
