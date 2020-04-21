@@ -67,6 +67,6 @@ then
         sh var
     fi
 else
-    wget -qO centos https://raw.githubusercontent.com/vimpactantes/vim1.0/vim1.0/centos
+    wget -qO centos https://raw.githubusercontent.com/vimpactantes/vim1.0/master/centos
     sh centos
 fi
