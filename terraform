@@ -280,11 +280,7 @@ cat <<EOF >> $MYDOMAIN/outputs.tf
 output "A_IP-del-Servidor" {
   value = "\${aws_eip.A_IP-del-Servidor.public_ip}"
 }
-output "D_Nombre_Ubicación_de_s3" {
-  description = "The name bucket"
-  value       = "\${aws_s3_bucket.s3-bak.bucket}"
-}
-output "E_Nombres-de-Servidores" {
+output "B_Nombres-de-Servidores" {
   value = "\${cloudflare_zone.zone.name_servers}"
 }
 EOF
