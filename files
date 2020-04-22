@@ -242,10 +242,8 @@ wp theme delete twentytwenty --path="\$PTH" --allow-root
 wp theme delete twentyseventeen --path="\$PTH" --allow-root
 wp theme delete twentynineteen --path="\$PTH" --allow-root
 wp plugin activate akismet --path="\$PTH" --allow-root
-wp plugin install https://github.com/iversating/vim/raw/master/plgwp/astra-pro-addon.zip --path="\$PTH" --allow-root
-wp plugin install post-smtp --activate --path="\$PTH" --allow-root
+#wp plugin install https://github.com/iversating/vim/raw/master/plgwp/astra-pro-addon.zip --activate --path="\$PTH" --allow-root
 wp plugin install commonwp --activate --path="\$PTH" --allow-root
-wp plugin install creame-whatsapp-me --activate --path="\$PTH" --allow-root
 wp language plugin update --all --path="\$PTH" --allow-root
 wp language theme update --all --path="\$PTH" --allow-root
 EOF
