@@ -181,7 +181,7 @@ EOF
 
 cat <<EOF >> $MYDOMAIN/.sh/addwphost.sh
 DOMINIO='ventasimpactantes.tk'
-WPUSER='$WPUSER'
+WPUSER='$WPUSERR'
 WPPASS='$MYDBPASS'
 EMAIL='$EML'
 echo -e "22\ny\n\$DOMINIO\ny\ny\n2\n\n\n\n\nn\nn\ny\ny\n\$WPUSER\n\$WPPASS\n\$EMAIL\n1\nn\ny\n24\n24" | centmin
