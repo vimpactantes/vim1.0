@@ -203,8 +203,8 @@ resource "aws_instance" "web" {
     destination = "/home/centos/restart.sh"
   }
   provisioner "file" {
-	source        = ".sh/bk-local.sh"
-	destination   = "/home/centos/bk-local.sh"
+	  source      = ".sh/bk-local.sh"
+	  destination = "/home/centos/bk-local.sh"
   }
   provisioner "file" {
     source      = ".sh/ejecutelocal.sh"
