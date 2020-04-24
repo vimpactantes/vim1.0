@@ -57,16 +57,16 @@ then
     echo -n " - Escribe un Nombre de USUARIO para ingresar al Panel de WordPress y [enter] = "
     read INPUT
     if [ $INPUT ]; then
-        WPUSER="$INPUT"
-        export WPUSER
+        WPUSERR="$INPUT"
+        export WPUSERR
     fi
-    echo -n " - Escribe una 'CONTRASEÑA' para $WPUSER y oprime la tecla [enter] = "
+    echo -n " - Escribe una 'CONTRASEÑA' para $WPUSERR y oprime la tecla [enter] = "
     read INPUT
     if [ $INPUT ]; then
-        WPPASS="$INPUT"
-        export WPPASS
+        WPPASSS="$INPUT"
+        export WPPASSS
     fi
-    MYDBPASS=$(echo "$WPPASS" | sed 's/\$/\\$/g')
+    MYDBPASS=$(echo "$WPPASSS" | sed 's/\$/\\$/g')
     export MYDBPASS
     printf "\033c"
     echo "*************************************************************************************************"
@@ -88,8 +88,8 @@ then
     echo "           Tu 'AWS ID DE CLAVE DE ACCESO' es           =  $accesskey                             "
     echo "           Tu 'AWS CLAVE DE ACCESO SECRETA' es         =  $secretkey                             "
     echo "           El 'DOMINIO' para crear tu página web es    =  $MYDOMAIN                              "
-    echo "           El 'USUARIO' para el Panel de WordPress es  =  $WPUSER                              "
-    echo "           La 'CONTRASEÑA' para el Usuario $WPUSER es =  $WPPASS                              "
+    echo "           El 'USUARIO' para el Panel de WordPress es  =  $WPUSERR                              "
+    echo "           La 'CONTRASEÑA' para el Usuario $WPUSER es =  $WPPASSS                            "
     echo ""
     echo -n "    ¿Son Correctas Estas Credenciales?                                                       "
     echo ""
@@ -154,16 +154,16 @@ else
     echo -n " - Escribe un Nombre de USUARIO para ingresar al Panel de WordPress y [enter] = "
     read INPUT
     if [ $INPUT ]; then
-        WPUSER="$INPUT"
-        export WPUSER
+        WPUSERR="$INPUT"
+        export WPUSERR
     fi
-    echo -n " - Escribe una 'CONTRASEÑA' para $WPUSER y oprime la tecla [enter] = "
+    echo -n " - Escribe una 'CONTRASEÑA' para $WPUSERR y oprime la tecla [enter] = "
     read INPUT
     if [ $INPUT ]; then
-        WPPASS="$INPUT"
-        export WPPASS
+        WPPASSS="$INPUT"
+        export WPPASSS
     fi
-    MYDBPASS=$(echo "$WPPASS" | sed 's/\$/\\$/g')
+    MYDBPASS=$(echo "$WPPASSS" | sed 's/\$/\\$/g')
     export MYDBPASS
     EML="$EML"
     export EML
@@ -193,8 +193,8 @@ else
     echo "           Tu 'ID DE CLAVE DE ACCESO' de AWS es        =  $ACK                                   "
     echo "           Tu 'CLAVE DE ACCESO SECRETA' de AWS es      =  $SCK                                   "
     echo "           El 'DOMINIO' para crear tu página web es    =  $MYDOMAIN                              "
-    echo "           El 'USUARIO' para el Panel de WordPress es  =  $WPUSER                              "
-    echo "           La 'CONTRASEÑA' para el Usuario $WPUSER es =  $WPPASS                              "
+    echo "           El 'USUARIO' para el Panel de WordPress es  =  $WPUSERR                             "
+    echo "           La 'CONTRASEÑA' para el Usuario $WPUSER es =  $WPPASSS                              "
     echo ""
     echo -n "    ¿Son Correctas Estas Credenciales?                                                        "
     echo ""
