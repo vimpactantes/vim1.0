@@ -60,7 +60,8 @@ then
         WPUSERR="$INPUT"
         export WPUSERR
     fi
-    echo -n " - Escribe una 'CONTRASEÑA' para $WPUSERR y oprime la tecla [enter] = "
+    echo ""
+    echo -n " - Escribe una 'CONTRASEÑA' para el Usuario '$WPUSERR' y oprime [enter] = "
     read INPUT
     if [ $INPUT ]; then
         WPPASSS="$INPUT"
