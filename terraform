@@ -242,12 +242,12 @@ resource "aws_instance" "web" {
     source      = ".sh/hostname.sh"
     destination = "/home/centos/hostname.sh"
   }
-  provisioner "remote-exec" {
-    inline = [
-      "sudo chmod +x /home/centos/sh.sh",
-      "sudo /home/centos/sh.sh args",
-    ]
-  }
+  #provisioner "remote-exec" {
+  #  inline = [
+  #    "sudo chmod +x /home/centos/sh.sh",
+  #    "sudo /home/centos/sh.sh args",
+  #  ]
+  #}
   tags = {Name = "\${var.dominio}"}
 }
 resource "aws_eip" "A_IP-del-Servidor" {
@@ -313,4 +313,5 @@ echo "***********        !  E S T A M O S   C R E A N D O   T U   S E R V I D O 
 echo "***********                                                                           ***********"
 echo "================================================================================================="
 cd ~/$MYDOMAIN/
-terraform apply --auto-approve
+terrafom plan
+#terraform apply --auto-approve
