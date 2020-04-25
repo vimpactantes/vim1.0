@@ -314,5 +314,5 @@ echo "***********                                                               
 echo "***********        !  E S T A M O S   C R E A N D O   T U   S E R V I D O R  !        ***********"
 echo "***********                                                                           ***********"
 echo "================================================================================================="
-cd ~/$MYDOMAIN/
-terraform apply --auto-approve
+#cd ~/$MYDOMAIN/
+#terraform apply --auto-approve
