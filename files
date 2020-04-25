@@ -149,21 +149,17 @@ echo "PHP_ZSTD='y'" >> /etc/centminmod/custom_config.inc
 # php file info
 echo "PHPFINFO='y'" >> /etc/centminmod/custom_config.inc
 echo "VHOSTCTRL_CLOUDFLAREINC='y'" >> /etc/centminmod/custom_config.inc
-
 EMAIL=$EML
 #CRON EMAIL
 # setup email alerts for diskalert cronjob /etc/cron.daily/diskalert
 # https://community.centminmod.com/posts/59973/
 sed -i "s|EMAIL=.*|EMAIL='\$EMAIL'|" /etc/cron.daily/diskalert
-
 #PHP
 sed -i 's/max_execution_time = 60/max_execution_time = 600/g' /etc/centminmod/php.d/a_customphp.ini
 fpmrestart
-
 #SSL
 cd /usr/local/src/centminmod/addons
 sudo echo -e "y" | ./acmetool.sh acmeinstall
-
 #INIT CENTMINMOD
 echo "$EML" >> /etc/centminmod/email-primary.ini
 echo "$EML" >> /etc/centminmod/email-secondary.ini
@@ -180,7 +176,7 @@ sudo sh /root/addwphost.sh
 EOF
 
 cat <<EOF >> $MYDOMAIN/.sh/addwphost.sh
-DOMINIO='ventasimpactantes.tk'
+DOMINIO=$MYDOMAIN
 WPUSER='$WPUSERR'
 WPPASS='$MYDBPASS'
 EMAIL='$EML'
